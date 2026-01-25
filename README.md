@@ -2,6 +2,11 @@
 
 > "A zero-player game of birth, survival, and death unfolding in Git history."
 
+### 📢 Latest Status
+<!-- LATEST_STATUS_START -->
+*Awaiting the first autonomous evolution...*
+<!-- LATEST_STATUS_END -->
+
 ### 📖 The Analogy
 Think of this repository as a petri dish. Each file in the [Grid](grid/) is a living "cell." 
 - If a cell is too lonely (fewer than 2 neighbors), it dies.
