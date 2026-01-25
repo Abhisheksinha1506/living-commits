@@ -98,5 +98,18 @@ def evolve():
     with open(log_path, 'a') as f:
         f.write(f"| {gen_count + 1} | {date_str} | Alive: {len(next_alive_cells)} | \n```\n{ascii_snapshot}\n``` |\n")
 
+    # Generate human summary
+    born = len(next_alive_cells - alive_cells)
+    died = len(alive_cells - next_alive_cells)
+    summary = f"Generation {gen_count + 1} of the digital colony is here. "
+    summary += f"Today, {born} new cells were born and {died} cells passed away. "
+    summary += f"The total population now stands at {len(next_alive_cells)} living cells."
+    
+    if len(next_alive_cells) == 0:
+        summary += " The colony has unfortunately collapsed and is now empty."
+
+    with open(os.path.join(base_dir, 'summary.txt'), 'w') as f:
+        f.write(summary)
+
 if __name__ == "__main__":
     evolve()
